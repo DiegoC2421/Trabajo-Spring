@@ -12,9 +12,9 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "Cards")
-@IdClass(CardId.class)
-public class Card {
+@Table(name = "Details")
+@IdClass(DetailId.class)
+public class Detail {
 	@Id
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="order_id")
@@ -36,7 +36,7 @@ public class Card {
 	@Column(name = "unit_price", columnDefinition = "DECIMAL(8,2)")
 	private Float price;
 
-	public Card() {
+	public Detail() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

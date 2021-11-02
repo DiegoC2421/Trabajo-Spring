@@ -45,7 +45,7 @@ public class Product {
 	private Category category;
 	
 	@OneToMany(mappedBy = "product",fetch = FetchType.LAZY)
-    private List<Card> carts;
+    private List<Detail> carts;
 
 	public Product() {
 		super();
@@ -100,11 +100,11 @@ public class Product {
 		this.category = category;
 	}
 
-	public List<Card> getCarts() {
+	public List<Detail> getCarts() {
 		return carts;
 	}
 
-	public void setCarts(List<Card> carts) {
+	public void setCarts(List<Detail> carts) {
 		this.carts = carts;
 	}
 	

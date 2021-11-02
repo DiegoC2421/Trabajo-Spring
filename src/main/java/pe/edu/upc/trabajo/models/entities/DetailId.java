@@ -4,19 +4,19 @@ import java.io.Serializable;
 import java.util.Objects;
 
 
-public class CardId implements Serializable {
+public class DetailId implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private Order order;
 	private Product product;
 	private Producer producer;
 	
-	public CardId() {
+	public DetailId() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
-	public CardId(Producer producer, Product product, Order order) {
+	public DetailId(Producer producer, Product product, Order order) {
 		super();
 		this.order = order;
 		this.product = product;
@@ -59,7 +59,7 @@ public class CardId implements Serializable {
 		if(obj == null || this.getClass() != obj.getClass())
 			return false;
 		
-		CardId cardId = (CardId)obj;
+		DetailId cardId = (DetailId)obj;
 		
 		if(this.order != cardId.order)
 			return false;

@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.Index;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -15,4 +14,6 @@ public class Comment {
 	
 	@OneToMany(mappedBy = "comment", fetch = FetchType.LAZY)
 	private List<Review> reviews;
+	
+	//FALTA GENERAR SUPERCLASE Y GETTTER Y SETTERS
 }

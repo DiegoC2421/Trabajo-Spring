@@ -18,8 +18,8 @@ import javax.persistence.TemporalType;
 @Table(name = "Shipment_statuses", 
 		indexes = { @Index( columnList = "status_id", name = "shipment_statuses_index_status_id" ),
 				 @Index( columnList = "shipment_id", name = "shipment_statuses_index_shipment_id" )})
-@IdClass(ShipmentStatusesId.class)
-public class ShipmentStatuses {
+@IdClass(ShipmentStatusId.class)
+public class ShipmentStatus {
 	@Id
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "status_id", nullable = false)
@@ -38,7 +38,7 @@ public class ShipmentStatuses {
 	@Temporal(TemporalType.DATE)
 	private Date dateEnd;
 
-	public ShipmentStatuses() {
+	public ShipmentStatus() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

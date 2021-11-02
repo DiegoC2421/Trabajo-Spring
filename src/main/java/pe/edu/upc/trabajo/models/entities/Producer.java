@@ -23,8 +23,11 @@ public class Producer {
 	@Column(name = "producer_id", columnDefinition = "NUMERIC(4)")
 	private Integer id;
 
-	@Column(name = "producer_name")
-	private Integer name;
+	@Column(name = "producer_first_name", length = 20)
+	private String name;
+	
+	@Column(name = "producer_last_name", length = 20)
+	private String lastName;
 
 	@Column(name = "phone", columnDefinition = "NUMERIC(9)")
 	private Integer phone;

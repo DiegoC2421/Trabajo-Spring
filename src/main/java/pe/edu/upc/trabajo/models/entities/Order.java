@@ -42,8 +42,9 @@ public class Order {
 	private TypePayment typePayment; 
 	
 	@OneToMany(mappedBy = "order", fetch = FetchType.LAZY)
-	private List<Card> cards;
+	private List<Detail> cards;
 	
 	//FALTA EL UNO A UNO SON SHIPMENTS
-	//Y CREAR EL CONSTRUTOR Y GETTER Y SETTER
+	
+	//Y CREAR LA SUPERCLASE, GETTER Y SETTER
 }

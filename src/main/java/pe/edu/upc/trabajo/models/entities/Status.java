@@ -25,7 +25,7 @@ public class Status {
 	private String name;
 	
 	@OneToMany(mappedBy = "status", fetch = FetchType.LAZY)
-	private List<ShipmentStatuses> shipmentStatus;
+	private List<ShipmentStatus> shipmentStatus;
 
 	public Status() {
 		super();
@@ -48,11 +48,11 @@ public class Status {
 		this.name = name;
 	}
 
-	public List<ShipmentStatuses> getShipmentStatus() {
+	public List<ShipmentStatus> getShipmentStatus() {
 		return shipmentStatus;
 	}
 
-	public void setShipmentStatus(List<ShipmentStatuses> shipmentStatus) {
+	public void setShipmentStatus(List<ShipmentStatus> shipmentStatus) {
 		this.shipmentStatus = shipmentStatus;
 	}
 }

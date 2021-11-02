@@ -3,19 +3,19 @@ package pe.edu.upc.trabajo.models.entities;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class ShipmentStatusesId implements Serializable{
+public class ShipmentStatusId implements Serializable{
 private static final long serialVersionUID = 1L;
 	
 	private Status status;
 	private Shipment shipment;
 	
 	
-	public ShipmentStatusesId() {
+	public ShipmentStatusId() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public ShipmentStatusesId(Status status, Shipment shipment) {
+	public ShipmentStatusId(Status status, Shipment shipment) {
 		super();
 		this.status = status;
 		this.shipment = shipment;
@@ -53,7 +53,7 @@ private static final long serialVersionUID = 1L;
 		if(obj == null || this.getClass() != obj.getClass())
 			return false;
 		
-		ShipmentStatusesId shipmentStatusesId = (ShipmentStatusesId)obj;
+		ShipmentStatusId shipmentStatusesId = (ShipmentStatusId)obj;
 		
 		if(this.shipment != shipmentStatusesId.shipment)
 			return false;
