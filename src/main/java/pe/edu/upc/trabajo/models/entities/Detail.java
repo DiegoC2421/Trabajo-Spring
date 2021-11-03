@@ -25,10 +25,10 @@ public class Detail {
 	@JoinColumn(name="product_id")
 	private Product product;
 	
-	@Id
+	/*
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="producer_id")
-	private Producer producer;
+	private Producer producer;*/
 	
 	@Column(name = "quantity")
 	private Integer quantity;

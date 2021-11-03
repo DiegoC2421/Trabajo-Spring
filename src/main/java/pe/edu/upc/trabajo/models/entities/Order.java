@@ -13,6 +13,7 @@ import javax.persistence.Index;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -44,7 +45,67 @@ public class Order {
 	@OneToMany(mappedBy = "order", fetch = FetchType.LAZY)
 	private List<Detail> cards;
 	
-	//FALTA EL UNO A UNO SON SHIPMENTS
-	
-	//Y CREAR LA SUPERCLASE, GETTER Y SETTER
+	@OneToOne(mappedBy = "order", fetch = FetchType.LAZY)
+	private Shipment shipment;
+
+	public Order() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Wholesaler getWholesaler() {
+		return wholesaler;
+	}
+
+	public void setWholesaler(Wholesaler wholesaler) {
+		this.wholesaler = wholesaler;
+	}
+
+	public Float getAmount() {
+		return amount;
+	}
+
+	public void setAmount(Float amount) {
+		this.amount = amount;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	public TypePayment getTypePayment() {
+		return typePayment;
+	}
+
+	public void setTypePayment(TypePayment typePayment) {
+		this.typePayment = typePayment;
+	}
+
+	public List<Detail> getCards() {
+		return cards;
+	}
+
+	public void setCards(List<Detail> cards) {
+		this.cards = cards;
+	}
+
+	public Shipment getShipment() {
+		return shipment;
+	}
+
+	public void setShipment(Shipment shipment) {
+		this.shipment = shipment;
+	}
 }

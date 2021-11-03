@@ -9,7 +9,7 @@ public class DetailId implements Serializable {
 	
 	private Order order;
 	private Product product;
-	private Producer producer;
+	//private Producer producer;
 	
 	public DetailId() {
 		super();
@@ -20,7 +20,7 @@ public class DetailId implements Serializable {
 		super();
 		this.order = order;
 		this.product = product;
-		this.producer = producer;
+		//this.producer = producer;
 	}
 
 	public Order getOrder() {
@@ -39,7 +39,7 @@ public class DetailId implements Serializable {
 		this.product = product;
 	}
 
-	public Producer getProducer() {
+	/*public Producer getProducer() {
 		return producer;
 	}
 
@@ -51,7 +51,7 @@ public class DetailId implements Serializable {
 	public int hashCode() {
 		return Objects.hash(order, producer, product);
 	}
-
+*/
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -65,8 +65,8 @@ public class DetailId implements Serializable {
 			return false;
 		if(this.product != cardId.product)
 			return false;
-		if(this.producer != cardId.producer)
-			return false;
+		/*if(this.producer != cardId.producer)
+			return false;*/
 		return true;
 	}
 }

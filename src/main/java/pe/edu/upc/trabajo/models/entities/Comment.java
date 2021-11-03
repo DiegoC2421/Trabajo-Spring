@@ -4,16 +4,41 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "Comments")
 public class Comment {
-	//FALTA ANADIR POR QUE ES DE 1 A 1
+	@Id
+	@OneToOne
+	@JoinColumn(name="producer_id")
+	private Producer producer;
 	
 	@OneToMany(mappedBy = "comment", fetch = FetchType.LAZY)
 	private List<Review> reviews;
-	
-	//FALTA GENERAR SUPERCLASE Y GETTTER Y SETTERS
+
+	public Comment() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Producer getProducer() {
+		return producer;
+	}
+
+	public void setProducer(Producer producer) {
+		this.producer = producer;
+	}
+
+	public List<Review> getReviews() {
+		return reviews;
+	}
+
+	public void setReviews(List<Review> reviews) {
+		this.reviews = reviews;
+	}
 }

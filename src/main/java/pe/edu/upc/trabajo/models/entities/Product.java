@@ -20,7 +20,6 @@ import javax.persistence.Table;
 		indexes = { @Index(columnList = "category_id", name = "products_index_product_id")})
 @IdClass(ProductId.class)
 public class Product {
-	
 	@Id
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "producer_id")
@@ -44,8 +43,8 @@ public class Product {
 	@JoinColumn(name = "category_id", nullable = false)
 	private Category category;
 	
-	@OneToMany(mappedBy = "product",fetch = FetchType.LAZY)
-    private List<Detail> carts;
+	/*@OneToMany(mappedBy = "product",fetch = FetchType.LAZY)
+    private List<Detail> details;*/
 
 	public Product() {
 		super();
@@ -100,12 +99,12 @@ public class Product {
 		this.category = category;
 	}
 
-	public List<Detail> getCarts() {
-		return carts;
+	/*public List<Detail> getCarts() {
+		return details;
 	}
 
 	public void setCarts(List<Detail> carts) {
-		this.carts = carts;
-	}
+		this.details = carts;
+	}*/
 	
 }

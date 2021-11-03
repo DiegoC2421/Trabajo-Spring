@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Index;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -24,10 +25,10 @@ public class Shipment {
 	@Column(name = "shipment_id", columnDefinition = "NUMERIC(4)")
 	private Integer id;
 	
-	//ACÁ LA RELACIÓN CON ORDER
-	
-	//
-	
+	@OneToOne
+	@JoinColumn(name="order_id")
+	private Order order;
+
 	@Column(name = "date")
 	@Temporal(TemporalType.DATE)
 	private Date date;
@@ -38,6 +39,51 @@ public class Shipment {
 	@ManyToOne
 	@JoinColumn(name = "typeShipping_id", nullable = false)
 	private TypeShipment typeShipment;
+
+	public Shipment() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Order getOrder() {
+		return order;
+	}
+
+	public void setOrder(Order order) {
+		this.order = order;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public TypeShipment getTypeShipment() {
+		return typeShipment;
+	}
+
+	public void setTypeShipment(TypeShipment typeShipment) {
+		this.typeShipment = typeShipment;
+	}
 	
-	//FALTA CREAR LA SUPERCLASE, GETTER Y SETTERS
+	
 }
